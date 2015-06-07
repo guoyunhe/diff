@@ -1,0 +1,11 @@
+# NetBeans
+/nbproject/private/
+
+# Dolphin (Linux File browser)
+.directory
+
+# Composer
+/vendor/
+
+# Bower
+/public/bower_components/

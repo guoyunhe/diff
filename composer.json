@@ -1,0 +1,14 @@
+{
+    "name": "guoyunhe/diff",
+    "description": "Help people find different views of the same topic",
+    "authors": [
+        {
+            "name": "Guo Yunhe",
+            "email": "guoyunhebrave@gmail.com"
+        }
+    ],
+    "require": {
+        "klein/klein": "v2.1.0",
+        "smarty/smarty": "v3.1.24"
+    }
+}

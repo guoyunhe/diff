@@ -1,0 +1,21 @@
+{
+  "name": "guoyunhe-diff",
+  "version": "0.0.0",
+  "homepage": "https://github.com/guoyunhe/diff",
+  "authors": [
+    "Guo Yunhe <guoyunhebrave@gmail.com>"
+  ],
+  "license": "AGPLv3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "jquery": "~2.1.4",
+    "fontawesome": "~4.3.0"
+  }
+}
