@@ -17,5 +17,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// Serve static files before creating a Klein inctance
+// see http://stackoverflow.com/questions/24222517/how-to-serve-static-files-using-klein-php
+// and http://php.net/manual/en/features.commandline.webserver.php
+if (preg_match('#^/(bower_components|js|css|images)/#', $_SERVER["REQUEST_URI"])) {
+    return false;    // serve the requested resource as-is.
+}
+
 // Load core system
 require_once __DIR__ . '/../includes/core.php';

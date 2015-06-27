@@ -9,3 +9,9 @@
 
 # Bower
 /public/bower_components/
+
+# Smarty template compile
+/template-compile/
+
+# Cache
+/cache/
