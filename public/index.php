@@ -17,3 +17,5 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// Load core system
+require_once __DIR__ . '/../includes/core.php';
