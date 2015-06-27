@@ -39,8 +39,15 @@ $klein->respond('GET', '/', function () {
     $smarty->display('home.tpl');
 });
 
-// View: View link, URL http://diff.guoyunhe.me/link/https%3A%2F%2Fgithub.com%2Fguoyunhe
-$klein->respond('GET', '/link/[:url]', function ($request, $response) {
+// Diff a link
+// URL http://diff.guoyunhe.me/diff?q=https%3A%2F%2Fgithub.com%2Fguoyunhe
+$klein->respond('GET', '/diff', function ($request, $response) {
+    global $smarty;
+    $smarty->assign([
+        'link' => $request->link,
+        
+    ]);
+    $smarty->display('diff.tpl');
 });
 
 // View: Add new link, URL http://diff.guoyunhe.me/link/add

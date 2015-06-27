@@ -28,3 +28,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #diffbox h1 {
     text-align: center;
 }
+
+header {
+    margin: 40px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
