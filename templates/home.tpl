@@ -1,8 +1,9 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
         <title>diff - listen to more voices</title>
+        <meta name=viewport content="width=device-width, initial-scale=1">
         {include file='load-global-css.tpl'}
     </head>
     <body>
@@ -11,7 +12,7 @@
 
             <form action="/diff" method="GET">
                 <div class="input-group">
-                    <input type="search" name="link" class="form-control"/>
+                    <input type="search" name="url" class="form-control">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="submit">diff</button>
                     </span>

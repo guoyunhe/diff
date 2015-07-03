@@ -44,8 +44,50 @@ $klein->respond('GET', '/', function () {
 $klein->respond('GET', '/diff', function ($request, $response) {
     global $smarty;
     $smarty->assign([
-        'link' => $request->link,
-        
+        'id' => 12345,
+        'url' => $request->url,
+        'differences' => [
+            [
+                'id' => 10234,
+                'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
+            ],
+            [
+                'id' => 10234,
+                'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
+            ],
+            [
+                'id' => 10234,
+                'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
+            ],
+            [
+                'id' => 10234,
+                'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
+            ],
+            [
+                'id' => 10234,
+                'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
+            ],
+            [
+                'id' => 10234,
+                'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
+            ],
+            [
+                'id' => 10234,
+                'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
+            ],
+            [
+                'id' => 10234,
+                'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
+            ],
+            [
+                'id' => 10234,
+                'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
+            ],
+            [
+                'id' => 10234,
+                'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
+            ],
+        ]
     ]);
     $smarty->display('diff.tpl');
 });
