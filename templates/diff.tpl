@@ -9,25 +9,20 @@
     <body>
         {include file='header.tpl'}
 
-        <div id="graph">
-            <div id="master-link" class="link master">
-                <div class="wrap">
-                    <a href="{$url}" target="_blank">{$url}</a>
-                    <br>
-                    <i class="fa fa-exclamation-circle"></i>
-                    <i class="fa fa-heart"></i>
-                </div>
-            </div>
-            {foreach $differences as $difference}
-                <div class="link servant">
-                    <div class="wrap">
-                        <a href="{$difference.url}">{$difference.url}</a>
-                        <br>
-                        <i class="fa fa-exclamation-circle"></i>
-                        <i class="fa fa-heart"></i>
-                    </div>
-                </div>
-            {/foreach}
+        {include file='list.tpl'}
+
+        {include file='graph.tpl'}
+
+        <div id="graph-list-switch" class="btn-group  btn-group-justified visible-xs-block"
+             role="group" aria-label="..." data-toggle="buttons">
+            <label id="graph-button" class="btn btn-primary active">
+                <input type="radio" autocomplete="off" checked>
+                <i class="fa fa-sitemap"></i>
+            </label>
+            <label id="list-button" class="btn btn-primary">
+                <input type="radio" autocomplete="off">
+                <i class="fa fa-list"></i>
+            </label>
         </div>
 
         {include file='load-global-js.tpl'}
