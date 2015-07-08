@@ -49,42 +49,52 @@ $klein->respond('GET', '/diff', function ($request, $response) {
         'differences' => [
             [
                 'id' => 10234,
+                'title' => 'LibreOffice - Wikipedia, the free encyclopedia',
                 'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
             ],
             [
-                'id' => 10234,
+                'id' => 10235,
+                'title' => 'LibreOffice - Wikipedia, the free encyclopedia',
                 'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
             ],
             [
-                'id' => 10234,
+                'id' => 10237,
+                'title' => 'LibreOffice - Wikipedia, the free encyclopedia',
                 'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
             ],
             [
-                'id' => 10234,
+                'id' => 10297,
+                'title' => 'LibreOffice - Wikipedia, the free encyclopedia',
                 'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
             ],
             [
-                'id' => 10234,
+                'id' => 10312,
+                'title' => 'LibreOffice - Wikipedia, the free encyclopedia',
                 'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
             ],
             [
-                'id' => 10234,
+                'id' => 12456,
+                'title' => 'LibreOffice - Wikipedia, the free encyclopedia',
                 'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
             ],
             [
-                'id' => 10234,
+                'id' => 12743,
+                'title' => 'LibreOffice - Wikipedia, the free encyclopedia',
                 'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
             ],
             [
-                'id' => 10234,
+                'id' => 12991,
+                'title' => 'LibreOffice - Wikipedia, the free encyclopedia',
                 'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
             ],
             [
-                'id' => 10234,
+                'id' => 12992,
+                'title' => 'LibreOffice - Wikipedia, the free encyclopedia',
                 'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
             ],
             [
-                'id' => 10234,
+                'id' => 13003,
+                'title' => 'LibreOffice - Wikipedia, the free encyclopedia',
                 'url' => 'https://en.wikipedia.org/wiki/LibreOffice',
             ],
         ]

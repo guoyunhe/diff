@@ -25,6 +25,8 @@
             </label>
         </div>
 
+        {include file='templates.tpl'}
+
         {include file='load-global-js.tpl'}
     </body>
 </html>
