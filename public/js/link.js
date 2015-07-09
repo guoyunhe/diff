@@ -102,6 +102,12 @@ Link.prototype.highlight = function () {
     $('.link').removeClass('active');
     this.listElement.addClass('active');
     this.graphElement.addClass('active');
+    this.scrollToListTop();
+};
+
+Link.prototype.scrollToListTop = function () {
+    var scroll = $('#list .inner').scrollTop() + this.listElement.position().top;
+    $('#list .inner').scrollTop(scroll);
 };
 
 Link.prototype.setPosition = function (x, y) {
