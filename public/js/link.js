@@ -106,8 +106,8 @@ Link.prototype.highlight = function () {
 
 Link.prototype.setPosition = function (x, y) {
     this.graphElement.css({
-        left: $('#graph').width() / 2 + x - 20,
-        top: $('#graph').height() / 2 + y - 20
+        left: $('#graph .inner').width() / 2 + x,
+        top: $('#graph .inner').height() / 2 + y
     });
 };
 

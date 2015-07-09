@@ -49,10 +49,7 @@ header .container-fluid > button {
     top: 80px;
     bottom: 0;
     background-color: #f7f7f7;
-    background-image: url("../images/bg-graph.svg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    overflow: hidden;
     z-index: 0;
 }
 
@@ -67,15 +64,34 @@ header .container-fluid > button {
     }
 }
 
+/* Drag boundary */
+#graph .outer {
+    position: absolute;
+}
+
+/* Drag target */
+#graph .inner {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-image: url("../images/bg-graph.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 #graph .link {
     position: absolute;
     left: -9999px; /* invisible before layout initialized */
     width: 40px;
     height: 40px;
+    margin-left: -20px;
+    margin-top: -20px;
     border-radius: 9999px;
     border: 3px solid #269abc;
     background: white;
     text-align: center;
+    cursor: default;
 }
 
 #graph .link.active {
