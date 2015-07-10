@@ -16,11 +16,12 @@
  */
 
 $(function () {
-    var viewSwitcher = new ViewSwitcher();
-
-    var graphView = new GraphView();
+    // Header
+    var app = new App();
+    window.app = app;
 
     var links = new Links();
+    window.links = links;
 
     $('#list .link').each(function () {
         var link = new Link($(this).data('link-id'));
@@ -30,31 +31,65 @@ $(function () {
     links.layout();
 });
 
-/**
- * Switch list and graph view.
- * @returns {ViewSwitch}
- */
 
-function ViewSwitcher() {
-    var $listViewElement = $('#list');
-    var $graphViewElement = $('#graph');
+function App() {
+    this.listViewElement = $('#list');
+    this.graphViewElement = $('#graph');
 
-    var openList = function () {
-        $listViewElement.addClass('active');
-        $graphViewElement.removeClass('active');
-    };
+    this.listButtonElement = $('#list-button');
+    this.graphButtonElement = $('#graph-button');
 
-    var openGraph = function () {
-        $graphViewElement.addClass('active');
-        $listViewElement.removeClass('active');
-    };
-
-    // Bind events
-    $('#list-button').click(openList);
-    $('#graph-button').click(openGraph);
+    this.graphListSwitch();
+    this.graphDraggable();
 }
 
-function GraphView() {
+App.prototype.openList = function () {
+    this.listViewElement.addClass('active');
+    this.graphViewElement.removeClass('active');
+};
+
+App.prototype.openGraph = function () {
+    this.listViewElement.removeClass('active');
+    this.graphViewElement.addClass('active');
+};
+
+App.prototype.graphListSwitch = function () {
+    var that = this;
+    // Switch graph view and list view
+    this.listButtonElement.click(function () {
+        that.openList();
+    });
+    this.graphButtonElement.click(function () {
+        that.openGraph();
+    });
+};
+
+App.prototype.graphDraggable = function () {
+    // Use interact.js, support touch screen devices
+    interact('#graph .inner').draggable({
+        inertia: true,
+        restrict: {
+            restriction: "parent",
+            endOnly: true,
+            elementRect: {top: 0, left: 0, bottom: 1, right: 1}
+        },
+        onmove: dragMoveListener
+    });
+
+    function dragMoveListener(event) {
+        var $target = $(event.target);
+        var x = ($target.data('x') || 0) + event.dx;
+        var y = ($target.data('y') || 0) + event.dy;
+
+        // translate the element
+        $target.css({
+            transform: 'translate(' + x + 'px, ' + y + 'px)'
+        });
+        // update the posiion attributes
+        $target.data('x', x);
+        $target.data('y', y);
+    }
+    
     var $graph = $('#graph');
     var $outer = $('#graph .outer'); // Drag boundary
     var $inner = $('#graph .inner'); // Drag target
@@ -88,29 +123,4 @@ function GraphView() {
     }
     alignCenter();
     $(window).resize(alignCenter);
-
-    // target elements with the "draggable" class
-    interact('#graph .inner').draggable({
-        inertia: true,
-        restrict: {
-            restriction: "parent",
-            endOnly: true,
-            elementRect: {top: 0, left: 0, bottom: 1, right: 1}
-        },
-        onmove: dragMoveListener
-    });
-
-    function dragMoveListener(event) {
-        var $target = $(event.target);
-        var x = ($target.data('x') || 0) + event.dx;
-        var y = ($target.data('y') || 0) + event.dy;
-
-        // translate the element
-        $target.css({
-            transform: 'translate(' + x + 'px, ' + y + 'px)'
-        });
-        // update the posiion attributes
-        $target.data('x', x);
-        $target.data('y', y);
-    }
-}
+};
